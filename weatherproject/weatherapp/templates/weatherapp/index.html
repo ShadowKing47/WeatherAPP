@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- Link to your static CSS file -->
+
+    <style>
+        /* Inline style to apply the dynamic background image from image_url */
+        .container {
+            background-image: url('{{ image_url }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        
+        <div class="city-form">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="city" placeholder="Enter city" value="{{ city }}" required>
+                <h5> </h5>
+                <button type="submit">Get Weather</button>
+            </form>
+        </div>
+        
+        {% if city %}
+        <div class="weather-info">
+            <h2>Weather in {{ city }}</h2>
+            <div class="weather-details">
+                <p><strong>Temperature:</strong> {{ temp }}°C</p>
+                <p><strong>Humidity:</strong> {{ humidity }}%</p>
+                <p><strong>Country:</strong> {{ country }}</p>
+                <p><strong>Wind Speed:</strong> {{ wind_speed }} m/s</p>
+                <p><strong>Visibility:</strong> {{ visibility }} meters</p>
+            </div>
+            <div class="weather-icon">
+                <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="Weather Icon">
+            </div>
+            <p>{{ day }}</p>
+        </div>
+        {% else %}
+        <p>Please enter a city to get the weather information.</p>
+        {% endif %}
+    </div>
+
+    {% if exception_occoured %}
+    <script>
+        window.onload = function() {
+            alert("City is not available in our Monitoring Database");
+        }
+    </script>
+    {% endif %}
+</body>
+</html>

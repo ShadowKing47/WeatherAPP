@@ -1,0 +1,120 @@
+/* General body styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('{{ image_url }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #FF6F61;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Form styling */
+.city-form input[type="text"] {
+    padding: 10px;
+    width: 75%;
+    border: 2px solid #FF6F61;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.city-form input[type="text"]:focus {
+    border-color: #FF8A80;
+    box-shadow: 0 0 8px rgba(255, 110, 97, 0.4);
+}
+
+.city-form button {
+    padding: 10px 20px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.city-form button:hover {
+    background-color: #FF8A80;
+}
+
+/* Weather information styling */
+.weather-info {
+    margin-top: 30px;
+}
+
+.weather-details {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.weather-details p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.weather-icon img {
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+h2 {
+    color: #FF6F61;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.weather-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Make the page more lively */
+.weather-icon {
+    animation: bounce 1.5s infinite;
+}
+
+/* Keyframe for bouncing weather icon */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9; /* Light background for general use */
+    color: #333; /* Default text color */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for the container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Styling for weather information */
+.weather-info {
+    margin: 20px 0;
+    line-height: 1.6;
+    padding: 15px; /* Added padding for better spacing */
+    border: 1px solid #2980b9; /* Border to make it stand out */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.95); /* Light background for readability */
+}
+
+/* Paragraph styles in the weather info */
+.weather-info p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333; /* Default color for light background */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333; /* Dark background */
+        color: #f4f4f9; /* Light text for readability */
+    }
+    
+    .container {
+        background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+        color: #f4f4f9; /* Light text for contrast */
+    }
+    
+    .weather-info {
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background for weather info */
+        border: 1px solid #3498db; /* Light blue border */
+    }
+    
+    .weather-info p {
+        color: #f4f4f9; /* Light text for weather info */
+    }
+}
+
+.city-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+}
